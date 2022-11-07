@@ -31,7 +31,7 @@ export default {
             let token = localStorage.getItem("token_access");
             let userId = jwt_decode(token).user_id.toString();
             
-            axios.get(`https://mision-tic-c3-g2.herokuapp.com/user/${userId}/`,
+            axios.get(`https://djangobanktest.herokuapp.com/user/${userId}/`,
             {headers:{'Authorization':`Bearer ${token}`}})
             .then((result) =>{
                 this.name = result.data.name;
@@ -44,7 +44,7 @@ export default {
             })
         },
         verifyToken: function(){
-            return axios.post("https://mision-tic-c3-g2.herokuapp.com/refresh/",
+            return axios.post("https://djangobanktest.herokuapp.com/refresh/",
             {refresh: localStorage.getItem("token_refresh")},
             {headers:{}})
             .then((result) => {
@@ -81,7 +81,7 @@ export default {
     color: #283747;
  }
  .information span{
-    color: crimson;
+    color: blue;
     font-weight: bold;
  }
 </style>

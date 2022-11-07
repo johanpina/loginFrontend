@@ -21,7 +21,7 @@
 
 <script>
 import axios from 'axios';
-import {request} from 'http';
+//import {request} from 'http';
 export default {
     name:'SignUp',
     data: function(){
@@ -42,7 +42,7 @@ export default {
     methods:{
         processSignUp:function(){
             axios.post(
-                "https://mision-tic-c3-g2.herokuapp.com/userCreate/",
+                "https://djangobanktest.herokuapp.com/userCreate/",
                 this.user,
                 {headers:{}}
             )
@@ -115,7 +115,7 @@ export default {
 }
  .signUp_user button:hover {
     color: #E5E7E9;
-    background: crimson;
+    background: green;
     border: 1px solid #283747;
  }
 </style>

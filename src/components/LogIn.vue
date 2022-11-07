@@ -3,7 +3,7 @@
         <div class="containter_logIn_user">
             <h2>Iniciar Sesión</h2>
             <form v-on:submit.prevent="processLogInUser">
-                <input type="text" v-model="user.username" placeholder="Username">
+                <input type="text" v-model="user.username" placeholder="Usuario">
                 <br>
                 <input type="password" v-model="user.password" placeholder="Contraseña">
                 <br>
@@ -15,7 +15,7 @@
 
 <script>
 import axios from 'axios';
-import { request } from 'http';
+//import { request } from 'http';
 
 export default {
     name:'LogIn',
@@ -30,7 +30,7 @@ export default {
     methods:{
         processLogInUser:function(){
             axios.post(
-                "https://mision-tic-c3-g2.herokuapp.com/login/",
+                "https://djangobanktest.herokuapp.com/login/",
                 this.user,
                 {headers:{}}
             )
@@ -100,7 +100,7 @@ export default {
  }
  .logIn_user button:hover{
     color: #E5E7E9;
-    background: crimson;
+    background: green;
     border: 1px solid #283747;
  }
 </style>

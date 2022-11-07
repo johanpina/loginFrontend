@@ -1,5 +1,5 @@
 {
-  "name": "bank_fe2",
+  "name": "boards",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,15 +11,16 @@
     "axios": "^0.27.2",
     "core-js": "^3.6.5",
     "express": "^4.18.1",
+    "http": "^0.0.1-security",
     "jwt-decode": "^3.1.2",
     "serve-static": "^1.15.0",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.5.15",
-    "@vue/cli-plugin-router": "~4.5.15",
-    "@vue/cli-service": "~4.5.15",
+    "@vue/cli-plugin-babel": "^5.0.8",
+    "@vue/cli-plugin-router": "^5.0.8",
+    "@vue/cli-service": "^5.0.8",
     "@vue/compiler-sfc": "^3.0.0"
   },
   "browserslist": [

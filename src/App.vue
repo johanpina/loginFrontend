@@ -1,7 +1,10 @@
 <template>
+  
   <div class="App">
+    
     <div class="header">
-      <h1>Banco Misión TIC</h1>
+
+      <img src="../public/logo.png" width="70" height="70"/>
       <nav>
         <button v-if="is_auth" v-on:click="loadHome">Inicio</button>
         <button v-if="is_auth" v-on:click="loadAccount">Cuenta</button>
@@ -17,13 +20,10 @@
         v-on:completedSignUp="completedSignUp">
       </router-view>
     </div>
-
-    <div class="footer">
-      <h2>Misión TIC 2022</h2>
-    </div>
+    
   </div>
 </template>
-
+ 
 <script>
 export default{
   name:'App',
@@ -63,7 +63,7 @@ export default{
       localStorage.setItem("token_refresh",data.token_refresh);
       localStorage.setItem("username",data.username);
       localStorage.setItem("isAuth",true);
-      alert("El inicio de sesión fue correcto");
+      //alert("El inicio de sesión fue correcto");
       this.verifyAuth();
     },
     completedSignUp: function(data){
@@ -85,9 +85,9 @@ export default{
  margin: 0%;
  padding: 0;
  width: 100%;
- height: 10vh;
- min-height: 100px;
- background-color: #283747 ;
+ height: 4vh;
+ min-height: 70px;
+ background-color: #042143 ;
  color:#E5E7E9 ;
  display: flex;
 justify-content: space-between;
@@ -107,38 +107,21 @@ justify-content: space-between;
 }
  .header nav button{
  color: #E5E7E9;
- background: #283747;
+ background: #042143;
  border: 1px solid #E5E7E9;
  border-radius: 5px;
  padding: 10px 20px;
 }
  .header nav button:hover{
- color: #283747;
- background: #E5E7E9;
- border: 1px solid #E5E7E9;
+ color: #042143;
+ background: #5384e3;
+ border: 1px solid #5384e3;
 }
  .main-component{
- height: 75vh;
+ height: 95vh;
  margin: 0%;
  padding: 0%;
  background: #FDFEFE;
 }
- .footer{
- margin:0;
- padding:0;
-width: 100%;
- height: 10vh;
- min-height: 100px;
- background-color: #283747;
- color: #E5E7E9;
- }
- .footer h2{
- width: 100%;
- height: 100%;
-
- display: flex;
- justify-content: center;
- align-items: center;
- }
 
 </style>

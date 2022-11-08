@@ -4,7 +4,7 @@
     
     <div class="header">
 
-      <img src="../public/logo.png" width="70" height="70"/>
+      <img src="./assets/Logo_blanco.png" width="150" height="150"/>
       <nav>
         <button v-if="is_auth" v-on:click="loadHome">Inicio</button>
         <button v-if="is_auth" v-on:click="loadAccount">Cuenta</button>

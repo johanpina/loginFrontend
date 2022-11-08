@@ -1,10 +1,7 @@
 <template>
-    <div  v-if="loaded" class="information">
-        <h1>Información de su cuenta bancaria</h1>
-        <h2>Nombre: <span>{{name}} </span></h2>
-        <h2>Saldo: <span>{{balance}} </span></h2>
-        <h2>Correo electrónico: <span> {{email}}</span></h2>
-    </div>   
+   <div class="h_iframe">
+        <iframe title="Tablero indicadores INFI" src="https://app.powerbi.com/view?r=eyJrIjoiZDRhYWJkNTQtM2QzZC00NGRhLTliNWEtYTQ4ZThhZmI2MDhmIiwidCI6ImQ2YTk3NGIwLTg2ZWMtNDkxMi1iNDZjLTBmMGFhZTZhMjE5MCJ9&pageName=ReportSectiona6b42dfc18b40487a110" frameborder="0" allowFullScreen="true"></iframe>
+    </div>
 </template>
 
 <script>

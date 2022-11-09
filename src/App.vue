@@ -118,7 +118,7 @@ justify-content: space-between;
  border: 1px solid #5384e3;
 }
  .main-component{
- height: 95vh;
+ height: 89vh;
  margin: 0%;
  padding: 0%;
  background: #FDFEFE;

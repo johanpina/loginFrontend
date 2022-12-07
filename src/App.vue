@@ -3,11 +3,10 @@
   <div class="App">
     
     <div class="header">
-
       <img src="./assets/Logo_blanco.png" width="150" height="150"/>
       <nav>
-        <button v-if="is_auth" v-on:click="loadHome">Inicio</button>
-        <button v-if="is_auth" v-on:click="loadAccount">Cuenta</button>
+        <button v-if="is_auth" v-on:click="loadContratacion">Contratación</button>
+        <button v-if="is_auth" v-on:click="loadFinanciero">Financiero</button>
         <button v-if="is_auth" v-on:click="logOut">Cerrar Sesión</button>
         <button v-if="!is_auth" v-on:click="loadLogIn">Iniciar Sesión</button>
         <button v-if="!is_auth" v-on:click="loadSignUp">Registrarse</button>
@@ -39,7 +38,7 @@ export default{
       if(this.is_auth==false)
         this.$router.push({name:'logIn'})
       else
-        this.$router.push({name:"home"})
+        this.$router.push({name:"Contratacion"})
     },
     loadLogIn: function(){
        this.$router.push({name:'logIn'}) 
@@ -47,11 +46,11 @@ export default{
     loadSignUp: function(){
        this.$router.push({name:'signUp'}) 
     },
-    loadHome: function(){
-       this.$router.push({name:'home'}) 
+    loadContratacion: function(){
+       this.$router.push({name:'Contratacion'}) 
     },
-    loadAccount: function(){
-       this.$router.push({name:'account'}) 
+    loadFinanciero: function(){
+       this.$router.push({name:'Financiero'}) 
     },
     logOut: function(){
        localStorage.clear();

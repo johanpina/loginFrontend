@@ -3,16 +3,16 @@
         <iframe title="Tablero indicadores INFI" src="https://app.powerbi.com/view?r=eyJrIjoiZDRhYWJkNTQtM2QzZC00NGRhLTliNWEtYTQ4ZThhZmI2MDhmIiwidCI6ImQ2YTk3NGIwLTg2ZWMtNDkxMi1iNDZjLTBmMGFhZTZhMjE5MCJ9&pageName=ReportSectiona6b42dfc18b40487a110" frameborder="0" allowFullScreen="true"></iframe>
     </div>
 </template>
-
 <script>
+
 import axios from 'axios';
 import jwt_decode from 'jwt-decode';
 export default {
-    name: "Account",
+    name: "financiero",
     data: function(){
      return{
         name:"",
-        balance:0,
+        role:"",
         email:"",
         loaded:false,
      }   
@@ -28,12 +28,12 @@ export default {
             let token = localStorage.getItem("token_access");
             let userId = jwt_decode(token).user_id.toString();
             
-            axios.get(`https://djangobanktest.herokuapp.com/user/${userId}/`,
+            axios.get(`http://192.168.130.117:8000/user/${userId}/`,
             {headers:{'Authorization':`Bearer ${token}`}})
             .then((result) =>{
                 this.name = result.data.name;
                 this.email = result.data.email;
-                this.balance = result.data.account.balance;
+                this.role = result.data.role;
                 this.loaded = true;
             })
             .catch(()=>{
@@ -41,7 +41,7 @@ export default {
             })
         },
         verifyToken: function(){
-            return axios.post("https://djangobanktest.herokuapp.com/refresh/",
+            return axios.post("http://192.168.130.117:8000/refresh/",
             {refresh: localStorage.getItem("token_refresh")},
             {headers:{}})
             .then((result) => {

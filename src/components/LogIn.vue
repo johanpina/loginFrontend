@@ -30,7 +30,7 @@ export default {
     methods:{
         processLogInUser:function(){
             axios.post(
-                "https://djangobanktest.herokuapp.com/login/",
+                "http://192.168.130.117:8000/login/",
                 this.user,
                 {headers:{}}
             )

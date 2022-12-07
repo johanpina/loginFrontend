@@ -1,6 +1,7 @@
 <template>
     <div class="signUp_user">
         <div class="container_signUp_user">
+            <br>
             <h2>Registrarse</h2>
             <form v-on:submit.prevent="processSignUp">
                 <input type="text" v-model ="user.username" placeholder="Username">
@@ -11,8 +12,7 @@
                 <br>
                 <input type="email" v-model="user.email" placeholder="Correo">
                 <br>
-                <input type="number" v-model="user.account.balance" placeholder="Saldo Inicial">
-                <br>
+                <input type="role" v-model="user.role" placeholder="Rol">
                 <button type="submit">Registrarse</button>
             </form>
         </div>
@@ -31,18 +31,15 @@ export default {
                 password:"",
                 name:"",
                 email:"",
-                account:{
-                    balance:0,
-                    lastChangeDate: (new Date()).toJSON(),
-                    isActive:true
-                }
+                company:"InfiManizales",
+                role:"",
             }
         }
     },
     methods:{
         processSignUp:function(){
             axios.post(
-                "https://djangobanktest.herokuapp.com/userCreate/",
+                "http://192.168.130.117:8000/userCreate/",
                 this.user,
                 {headers:{}}
             )
@@ -77,7 +74,7 @@ export default {
     border: 3px solid #283747;
     border-radius: 10px;
     width: 25%;
-    height: 60%;
+    height: 65%;
     display: flex;
     flex-direction: column;
     justify-content: center;

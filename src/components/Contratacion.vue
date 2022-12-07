@@ -7,7 +7,7 @@
 
 <script>
 export default {
-    name:"Home",
+    name:"contratacion",
     data: function(){
         return{
             username: localStorage.getItem("username")
